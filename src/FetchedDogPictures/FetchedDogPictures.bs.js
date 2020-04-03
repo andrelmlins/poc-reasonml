@@ -32,12 +32,11 @@ function FetchedDogPictures(Props) {
   } else {
     var dogs = state[0];
     tmp = Belt_Array.mapWithIndex(dogs, (function (i, dog) {
-            var match = i === (dogs.length - 1 | 0);
             var imageStyle = {
               backgroundImage: "url(" + (String(dog) + ")"),
               backgroundPosition: "center",
               height: "120px",
-              marginRight: match ? "0px" : "8px",
+              marginRight: i === (dogs.length - 1 | 0) ? "0px" : "8px",
               width: "100%",
               backgroundSize: "cover",
               borderRadius: "8px",
